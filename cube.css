@@ -8,18 +8,22 @@ body, html {
 }
 
 .animation-container {
-    perspective: 1200px; /* Adds perspective to the container for 3D effect */
-    width: 400px;
-    height: 400px;
+    perspective: 1200px;
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping of cubes */
+    justify-content: space-around;
+    align-content: space-around;
+    width: 600px;  /* Container size for better fit */
+    height: 600px;  /* Container size for better fit */
 }
 
 .cube {
-    position: absolute;
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 90px; /* Reduced size to fit more cubes */
+    height: 90px; /* Reduced size to fit more cubes */
     transform-style: preserve-3d;
     animation: cubeRotate 8s infinite linear;
-    transform: rotateX(0deg) rotateY(0deg); /* Initial transform */
+    margin: 10px; /* Space between cubes */
 }
 
 @keyframes cubeRotate {
@@ -33,20 +37,20 @@ body, html {
 
 .cube-face {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 90px; /* Match size with cube */
+    height: 90px; /* Match size with cube */
     background-color: rgba(0, 240, 240, 0.8);
     border: 1px solid rgba(0, 240, 240, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 14px; /* Adjusted font size for better readability */
     color: #000000;
 }
 
-.front  { transform: translateZ(100px); }
-.back   { transform: rotateY(180deg) translateZ(100px); }
-.right  { transform: rotateY(90deg) translateZ(100px); }
-.left   { transform: rotateY(-90deg) translateZ(100px); }
-.top    { transform: rotateX(90deg) translateZ(100px); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); }
+.front  { transform: translateZ(45px); }
+.back   { transform: rotateY(180deg) translateZ(45px); }
+.right  { transform: rotateY(90deg) translateZ(45px); }
+.left   { transform: rotateY(-90deg) translateZ(45px); }
+.top    { transform: rotateX(90deg) translateZ(45px); }
+.bottom { transform: rotateX(-90deg) translateZ(45px); }
