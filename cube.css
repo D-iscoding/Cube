@@ -1,29 +1,33 @@
 body, html {
     height: 100%;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #000000;
+    overflow: hidden; /* Optional: hides overflow if cubes extend beyond screen */
 }
 
 .animation-container {
     perspective: 1200px;
     display: flex;
-    flex-wrap: wrap;  /* Allow wrapping of cubes */
-    justify-content: space-around;
-    align-content: space-around;
-    width: 600px;  /* Container size for better fit */
-    height: 600px;  /* Container size for better fit */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;   /* Full width of viewport */
+    height: 100vh;  /* Full height of viewport */
+    box-sizing: border-box;
+    padding: 20px;  /* Optional: spacing from edges */
 }
 
 .cube {
     position: relative;
-    width: 90px; /* Reduced size to fit more cubes */
-    height: 90px; /* Reduced size to fit more cubes */
+    width: 90px;
+    height: 90px;
     transform-style: preserve-3d;
     animation: cubeRotate 8s infinite linear;
-    margin: 10px; /* Space between cubes */
+    margin: 10px;
 }
 
 @keyframes cubeRotate {
@@ -37,14 +41,14 @@ body, html {
 
 .cube-face {
     position: absolute;
-    width: 90px; /* Match size with cube */
-    height: 90px; /* Match size with cube */
+    width: 90px;
+    height: 90px;
     background-color: rgba(0, 240, 240, 0.8);
     border: 1px solid rgba(0, 240, 240, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px; /* Adjusted font size for better readability */
+    font-size: 14px;
     color: #000000;
 }
 
